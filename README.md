@@ -24,3 +24,4 @@ Python notebooks to get started with Tensorflow, Neural Neworks (NNs), Convoluti
 
 **Note**: since this is an introductory course, most of the steps to define the computation graph in TensorFlow are manually implemented, e.g. I do not make use of predefined [tf.layers](https://www.tensorflow.org/api_docs/python/tf/layers). 
 
+This material is distributed under the [MIT License](https://choosealicense.com/licenses/mit/).
