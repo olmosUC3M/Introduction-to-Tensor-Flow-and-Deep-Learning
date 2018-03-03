@@ -21,3 +21,6 @@ Python notebooks to get started with Tensorflow, Neural Neworks (NNs), Convoluti
 - Notebook 6: Bi-directional LSTM RNN and sequential character prediction from MCC features with Connectionist Temporal Classification 
 
 - Notebook 7: Amortized Variational Inference with Neural Networks and Variational Autoencoders 
+
+**Note**: since this is an introductory course, most of the steps to define the computation graph in TensorFlow are manually implemented, e.g. I do not make use of predefined [tf.layers](https://www.tensorflow.org/api_docs/python/tf/layers). 
+
