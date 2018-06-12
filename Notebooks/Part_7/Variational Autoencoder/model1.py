@@ -10,13 +10,15 @@ def encoder(X,z_dim,batch_size):
     
     #Model inference 
        
-    hidden_dim = 500
+    hidden_dim = 200
     
     def_init = tf.random_normal_initializer(stddev=0.05)
     
     h = tf.layers.dense(inputs=X,units=hidden_dim,activation=tf.nn.tanh,kernel_initializer=def_init,name='layer_1_mean_enc',reuse=None)
     
-    enc_mean = tf.layers.dense(inputs=h,units=z_dim,activation=None,kernel_initializer=def_init,name='layer_2_mean_enc',reuse=None)
+    enc_mean = tf.layers.dense(inputs=h,units=z_dim,activation=tf.nn.tanh,kernel_initializer=def_init,name='layer_2_mean_enc',reuse=None)
+    
+    enc_mean *= 3
         
     h_logvar = tf.layers.dense(inputs=X,units=hidden_dim,activation=tf.nn.tanh,kernel_initializer=def_init,name='layer_1_var_enc',reuse=None)
     
@@ -37,7 +39,7 @@ def encoder(X,z_dim,batch_size):
 
 def decoder(inputX,sample_z,sigma_reconstruction,output_dim):
     
-    hidden_dim = 500
+    hidden_dim = 200
     
     def_init = tf.random_normal_initializer(stddev=0.05)
     
@@ -55,7 +57,7 @@ def decoder(inputX,sample_z,sigma_reconstruction,output_dim):
 
 def new_samples(num_imgs,z_dim, output_dim):
     
-    hidden_dim = 500
+    hidden_dim = 200
     
     # Sample from N(0,1)
     eps_sample = tf.random_normal((num_imgs, z_dim), 0, 1, dtype=tf.float32)
